@@ -15,18 +15,10 @@ int main() {
         arr.push_back((a*arr[i-1] + b) %c);
     }
 
-    long long sum = 0;
-    long long temp = 0;
-    for(long long i = 0; i < k; i++) {
-        temp += arr[i];
-    }
-    sum = temp;
-
-    for(long long r = k; r<n; r++) {
-        temp = temp + arr[r] - arr[r-k];
-        sum = sum ^ temp;
+    deque<int> q;
+    for(int i = 0; i < k; i++){
+        while(q.size() && arr[q.back() > a[i]])
     }
 
-    cout << sum << endl;
     return 0;
 }
